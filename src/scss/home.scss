@@ -1,0 +1,112 @@
+
+.hero {
+  padding: 200px 0;
+  background-color: #FAFAFA;
+  // .hero__container
+  &__container {
+    // border-left: 1px solid #000;
+    // border-right: 1px solid #000;
+    height: 500px;
+    @media (max-width: toEm(1300)){
+        width: calc(100% - 50px);
+    }
+  }
+}
+
+
+
+
+.top-main { 
+  position: relative;
+  z-index: 5;
+  display: inline-block;
+  background-color: #0008E0;
+  border-top-right-radius: toRem(65);
+  border-end-end-radius: toRem(65);
+  width: fit-content;
+  padding: toRem(16) toRem(43) toRem(16) 0;
+  font-size: toRem(20);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #0008E0;
+  }
+  @media (max-width:$mobile){
+     font-size: toRem(18); 
+     padding: toRem(14) toRem(36) toRem(14) 0;
+  }
+  @media (max-width:$mobileSmall){
+     font-size: toRem(14); 
+     padding: toRem(10) toRem(25) toRem(10) 0;
+  }
+    @media (max-width:$mobileSmall) and (min-width: toEm(370)){
+      width: calc(100% - 50px);
+  }
+  // .top-main__txt
+  &__txt {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    justify-content: start;
+    gap: toRem(12);
+    color: white;
+    align-items: center;
+    &:nth-child(1) {
+      margin-bottom: toRem(14);
+      @media (max-width:$mobileSmall){
+        margin-bottom: toRem(4);
+      }
+    }
+    @media (max-width:$mobileSmall){
+       gap: toRem(10); 
+    }
+  }
+  // .top-main__highlight
+  &__highlight {
+    display: inline-block;
+    color: #000;
+    width: fit-content;
+    height: fit-content;
+    position: relative; 
+    padding-left: toRem(8);
+    &::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: calc(100% + 4px);
+      height: calc(100% + 8px);
+      top: 50%;
+      left: 50%;
+      transform: translate(-47%, -50%);
+      background-color: #FFEC02;
+      border-radius: toRem(5);
+    }
+  }
+	// .top-main__p
+	&__p {
+
+	}
+  // .top-main__txt-2
+  &__txt-2 {
+    display: inline-flex;
+    align-items: flex-start;
+    background-color: #fff;
+    border-radius: toRem(5);
+    padding: toRem(4);
+    margin-top: toRem(10);
+    @media (max-width:$mobileSmall){
+       margin-top: toRem(6); 
+    }
+    img {
+      margin-left: toRem(5);
+      width: toRem(36);
+      height: auto;
+      @media (max-width:$mobileSmall){
+         width: toRem(28); 
+      }
+    }
+  }
+}
